@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <div id="container">
+      <button type="button" id="fetch-post">
+        Fetch Post from LocalStorage
+      </button>
+
+      <h2>Post: <span id="post-title"></span></h2>
+    </div>
+  </body>
+</html>
+
+<script>
+ let chiamaTitolo = document.getElementById("fetch-post")
+ 
+    chiamaTitolo.addEventListener("click", () => {
+      const postJson = localStorage.getItem("post");
+      const post = JSON.parse(postJson);
+
+      let chiamaPostTitle = document.getElementById("post-title")
+      
+      chiamaPostTitle.textContent = post.title;
+  });
+</script>

@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label>First Name:</label>
+          <input type="text" class="form-input" id="firstName" value="Mario"/>
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input type="text" class="form-input" id="lastName" value="Rossi"/>
+        </div>
+        <div>
+          <label>Age:</label>
+          <input type="number" class="form-input" id="age" value="25"/>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  // code here
+  const nameById = document.getElementById("firstName");
+  const lastNameById = document.getElementById("lastName");
+  const ageById = document.getElementById("age");
+
+  const person = {
+    firstName: nameById.value, lastName: lastNameById.value, age: ageById.value};
+
+  const form = document.querySelector("form");
+  form.setAttribute("data-person", JSON.stringify(person));
+</script>
